@@ -1,0 +1,33 @@
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+
+p {
+	margin: 20px 0;
+}
+
+input[type="number"] {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	width: 50%;
+}
+
+button {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #008CBA;
+	color: #fff;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+#guess-msg {
+	margin-top: 20px;
+	font-size: 1.5em;
+	font-weight: bold;
+}

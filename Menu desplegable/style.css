@@ -1,0 +1,56 @@
+nav {
+	background-color: #333;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+}
+
+nav ul li {
+	display: inline-block;
+	background-color: #333;
+}
+
+nav a {
+	display: block;
+	padding: 10px;
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+nav ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+}
+
+nav ul li:hover > ul {
+	display:inherit;
+}
+
+nav ul ul li {
+	width: 200px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	left:200px;
+}
+
+nav a:hover, nav ul ul ul a {
+	background-color: #0082e6;
+	color:#fff;
+}
+
+nav ul ul li:hover > a {
+	color:#fff;
+}
+

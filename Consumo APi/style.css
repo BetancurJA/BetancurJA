@@ -1,0 +1,45 @@
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	margin-bottom: 20px;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+label {
+	flex: 1 0 200px;
+	margin-right: 20px;
+}
+
+input[type="text"] {
+	flex: 1 1 300px;
+	padding: 10px;
+	font-size: 1.2em;
+}
+
+button[type="submit"] {
+	flex: 0 1 auto;
+	padding: 10px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+button[type="submit"]:hover {
+	background-color: #0069d9;
+}
+
+#search-results {
+	text-align: left;
+}
