@@ -1,109 +1,17 @@
-
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8" />
-<title>Piedra, papel o tijera (if)</title>
-<script type="text/javascript">
-var opciones=["Piedra","Papel","Tijeras"];
-var marcadorUsuario=0;
-var marcadorMaquina=0;
-function calcular(valor){
-var aleatorio;
-var divresulado;
-var piedra=0;
-var papel=1;
-var tijera=2;
-var gana = "<span style='color:green;'> Ganaste </span>";
-var pierde = "<span style='color:red;'> Perdiste </span>";
-var empata = "<span style='color:blue;'> Empate </span>";
+  <head>
+    <title>Botón para cambiar el color de fondo de la página varias veces</title>
+  </head>
+  <body>
+    <button onclick="cambiarColor()">Cambiar color de fondo</button>
+  </body>
+  <script>
+    function cambiarColor() {
+      var colores = ["red", "green", "blue", "yellow", "orange"]; // Lista de colores disponibles
+      var colorAleatorio = colores[Math.floor(Math.random() * colores.length)]; // Seleccionar un color aleatorio de la lista
+      document.body.style.backgroundColor = colorAleatorio; // Cambiar el color de fondo de la página
+    }
+  </script>
+</html>
 
-aleatorio=Math.floor(Math.random()*3);
-divresulado=document.getElementById("resultado");
-divmarcador=document.getElementById("marcador");
-mensaje="";
-
-var opcionUsuario=valor;
-var opcionMaquina=aleatorio;
-
-mensaje +="<div>Elegiste <b>" + opciones[opcionUsuario]+"</b></div>";
-mensaje +="<div>La máquina eligió <b>"+ opciones[opcionMaquina]+"</b></div>";
-
-mensaje +="<div style='font-size:1.3em; padding:10px;'>";
-//-----Evaluamos las elecciones------
-if(opcionUsuario==piedra)
-{
-if(opcionMaquina==piedra)
-{
-mensaje += empata;
-}
-if(opcionMaquina==papel)
-{
-mensaje += "La piedra pierde ante el papel" + pierde;
-marcadorMaquina++;
-}
-if(opcionMaquina==tijera)
-{
-mensaje += "La piedra rompe las tijeras" + gana;
-marcadorUsuario++;
-}
-}
-
-if(opcionUsuario==papel)
-{
-if(opcionMaquina==piedra)
-{
-mensaje += "El papel envuelve a la piedra" + gana;
-marcadorUsuario++;
-}
-if(opcionMaquina==papel)
-{
-mensaje += empata;
-}
-if(opcionMaquina==tijera)
-{
-mensaje += "El papel pierde ante las tijeras" + pierde;
-marcadorMaquina++;
-}
-}
-
-if(opcionUsuario==tijera)
-{
-if(opcionMaquina==piedra)
-{
-mensaje += "Las tijeras pierden ante la piedra" + pierde;
-marcadorMaquina++;
-}
-if(opcionMaquina==papel)
-{
-mensaje += "Las tijeras cortan el papel" + gana;
-marcadorUsuario++;
-}
-if(opcionMaquina==tijera)
-{
-mensaje += empata;
-}
-}
-mensaje +="</div>";
-
-//--- imprimimos resultados----
-divresulado.innerHTML=mensaje;
-divmarcador.innerHTML="<div>Marcador: Máquina <b>"+ marcadorMaquina +"</b> - <b>"+ marcadorUsuario +"</b> Usuario </div>";
-
-}
-</script>
-</head>
-
-<body>
-<h3>Juego de piedra, papel o tijera en javascript</h3>
-<p>El sistema utiliza un generador aleatorio para hacer su elección</p>
-<p>La computadora ya eligió su opción, ¿Qué eliges tú?</p>
-<p><input type="button" id="0" name="piedra" value="Piedra" onClick="calcular(0);">  
- <input type="button" id="1" name="papel" value="Papel" onClick="calcular(1);">  
- <input type="button" id="2" name="tijeras" value="Tijeras" onClick="calcular(2);"></p>
-<br />
-<div id="resultado"></div>
-
-<div id="marcador"></div>
-
-</body>
-</html> 
