@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Juego de adivinar el número</title>
+  <script>
+    function generateRandomNumber() {
+      var randomNumber = Math.floor(Math.random() * 100) + 1; // Genera un número aleatorio entre 1 y 100
+      return randomNumber;
+    }
+
+    function checkGuess() {
+      var guess = parseInt(document.getElementById("guess").value);
+      var result = document.getElementById("result");
+
+      if (isNaN(guess)) {
+        result.innerHTML = "Por favor, introduce un número válido.";
+      } else {
+        if (guess === randomNumber) {
+          result.innerHTML = "¡Felicitaciones! ¡Adivinaste el número!";
+        } else if (guess < randomNumber) {
+          result.innerHTML = "El número es mayor. Intenta de nuevo.";
+        } else {
+          result.innerHTML = "El número es menor. Intenta de nuevo.";
+        }
+      }
+    }
+
+    var randomNumber = generateRandomNumber(); // Genera el número aleatorio al cargar la página
+  </script>
+</head>
+<body>
+  <h1>Juego de adivinar el número</h1>
+  <p>He escogido un número del 1 al 100. ¿Puedes adivinar cuál es?</p>
+  <input type="number" id="guess" placeholder="Introduce tu adivinanza">
+  <button onclick="checkGuess()">Comprobar</button>
+  <p id="result"></p>
+</body>
+</html>
